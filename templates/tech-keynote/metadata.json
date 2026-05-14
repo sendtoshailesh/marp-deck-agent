@@ -1,0 +1,18 @@
+{
+  "name": "tech-keynote",
+  "displayName": "Tech Keynote",
+  "description": "Bold dark theme with neon green accents and monospace typography for technical presentations",
+  "version": "1.0.0",
+  "author": "marp-deck-agent",
+  "tags": ["dark", "technical", "developer", "keynote", "product-launch"],
+  "mode": "dark",
+  "palette": {
+    "background": "#09090b",
+    "surface": "#18181b",
+    "text": "#e4e4e7",
+    "accent1": "#22c55e",
+    "accent2": "#06b6d4"
+  },
+  "slideVariants": ["lead", "code", "light"],
+  "supportedLayouts": ["hero", "content", "two-column", "stat", "flow", "table", "cta"]
+}

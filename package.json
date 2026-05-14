@@ -1,0 +1,35 @@
+{
+  "name": "marp-deck-agent",
+  "version": "1.0.0",
+  "description": "GitHub Copilot plugin for generating professional Marp slide decks with PPT import, URL design extraction, and pro templates",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0"
+  },
+  "scripts": {
+    "render": "bash scripts/render-deck.sh",
+    "extract-theme": "node scripts/extract-pptx-theme.js",
+    "convert-pptx": "node scripts/convert-pptx-slides.js",
+    "extract-url": "node scripts/extract-url-tokens.js",
+    "preview-templates": "npx -y @marp-team/marp-cli --theme-set ./templates/ templates/*/preview.md --output ./build/"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "fast-xml-parser": "^5.2.0",
+    "playwright": "^1.52.0"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.0"
+  },
+  "keywords": [
+    "marp",
+    "slide-deck",
+    "copilot-plugin",
+    "presentation",
+    "github-copilot"
+  ],
+  "license": "MIT",
+  "author": "shaileshmishra",
+  "main": "index.js"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "corporate-light",
+  "displayName": "Corporate Light",
+  "description": "Clean white theme with blue accents for professional corporate presentations",
+  "version": "1.0.0",
+  "author": "marp-deck-agent",
+  "tags": ["light", "corporate", "professional", "clean", "business"],
+  "mode": "light",
+  "palette": {
+    "background": "#f7f9fc",
+    "surface": "#ffffff",
+    "text": "#18212e",
+    "accent1": "#2563eb",
+    "accent2": "#334155"
+  },
+  "slideVariants": ["lead", "accent", "dark"],
+  "supportedLayouts": ["hero", "content", "two-column", "stat", "flow", "table", "cta"]
+}

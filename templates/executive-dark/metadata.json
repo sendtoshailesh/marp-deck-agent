@@ -1,0 +1,18 @@
+{
+  "name": "executive-dark",
+  "displayName": "Executive Dark",
+  "description": "Premium dark theme with gold accents and glass morphism panels",
+  "version": "1.0.0",
+  "author": "marp-deck-agent",
+  "tags": ["dark", "executive", "premium", "corporate", "leadership"],
+  "mode": "dark",
+  "palette": {
+    "background": "#0f1419",
+    "surface": "#17202b",
+    "text": "#f5f7fb",
+    "accent1": "#667eea",
+    "accent2": "#ffd700"
+  },
+  "slideVariants": ["lead", "gradient", "light"],
+  "supportedLayouts": ["hero", "content", "two-column", "stat", "flow", "table", "cta"]
+}

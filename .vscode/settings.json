@@ -1,0 +1,7 @@
+{
+  "markdown.marp.themes": [
+    "./templates/executive-dark/theme.css",
+    "./templates/corporate-light/theme.css",
+    "./templates/tech-keynote/theme.css"
+  ]
+}
