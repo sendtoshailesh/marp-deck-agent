@@ -1,0 +1,27 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '16px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    secondaryColor: '#5C2D91'
+    tertiaryColor: '#106EBE'
+    background: 'transparent'
+---
+flowchart LR
+  A["🎯<br/><b>01</b><br/>Crisis"] --> B["🔁<br/><b>02</b><br/>Shift"]
+  B --> C["🤖<br/><b>03</b><br/>Agentic AI"]
+  C --> D["🛠 <br/><b>04</b><br/>AIDLC"]
+  D --> E["▶<br/><b>05</b><br/>Demo 1"]
+  E --> F["🚀<br/><b>06</b><br/>Demo 2"]
+  F --> G["🎓<br/><b>07</b><br/>Takeaways"]
+  classDef step fill:#0078D4,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  classDef demo fill:#5C2D91,stroke:#8661C5,stroke-width:2px,color:#FFFFFF
+  classDef close fill:#008272,stroke:#00BCF2,stroke-width:2px,color:#FFFFFF
+  class A,B,C,D step
+  class E,F demo
+  class G close

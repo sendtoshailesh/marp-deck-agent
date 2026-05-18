@@ -1,0 +1,24 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '16px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    background: 'transparent'
+---
+flowchart LR
+  L1["<b>L1 · Assisted</b><br/>Copilot suggests<br/>👤 Human decides<br/><b>22%</b> encoded"] --> L2["<b>L2 · Augmented</b><br/>Agents own tasks<br/>👤 Reviews input<br/><b>44%</b> encoded"]
+  L2 --> L3["<b>L3 · Autonomous</b><br/>Agents orchestrate<br/>👤 Approves outcome<br/><b>75%</b> encoded"]
+  L3 --> L4["<b>L4 · Self-Optimising</b><br/>Agents evolve specs<br/>👤 Sets strategy<br/><b>97%</b> encoded"]
+  classDef l1 fill:#605E5C,stroke:#8DA5C2,stroke-width:2px,color:#FFFFFF
+  classDef l2 fill:#106EBE,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  classDef l3 fill:#5C2D91,stroke:#8661C5,stroke-width:2px,color:#FFFFFF
+  classDef l4 fill:#008272,stroke:#00BCF2,stroke-width:2px,color:#FFFFFF
+  class L1 l1
+  class L2 l2
+  class L3 l3
+  class L4 l4

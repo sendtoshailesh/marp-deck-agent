@@ -1,0 +1,30 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '14px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    background: 'transparent'
+    sectionBkgColor: '#0E2148'
+    altSectionBkgColor: '#122A4A'
+    gridColor: '#50E6FF'
+    titleColor: '#FFFFFF'
+---
+gantt
+  title 2-Day AIDLC Workshop — Idea to Production
+  dateFormat HH:mm
+  axisFormat %H:%M
+  section Day 1 · Discover & Build
+  Pick use case             :done,    d1s1, 09:00, 90m
+  Spec the agent            :done,    d1s2, 10:30, 90m
+  Prototype sprint          :active,  d1s3, 13:00, 120m
+  AIDLC stage review        :         d1s4, 15:00, 120m
+  section Day 2 · Harden & Deploy
+  Install git-ape           :crit,    d2s1, 09:00, 90m
+  Encode standards          :         d2s2, 10:30, 90m
+  Deploy to Azure           :         d2s3, 13:00, 120m
+  Guardrails + handoff      :         d2s4, 15:00, 120m

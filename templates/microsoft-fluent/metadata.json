@@ -1,0 +1,17 @@
+{
+  "name": "microsoft-fluent",
+  "displayName": "Microsoft Fluent",
+  "description": "Customer-facing Microsoft brand-aligned theme with Fluent gradients (Azure Blue → Purple), high-contrast typography, and confident executive layouts.",
+  "palette": {
+    "primary": "#0078D4",
+    "primaryDark": "#106EBE",
+    "purple": "#5C2D91",
+    "purpleLight": "#8661C5",
+    "cyan": "#00BCF2",
+    "accent": "#50E6FF",
+    "teal": "#008272",
+    "ink": "#201F1E"
+  },
+  "use_cases": ["customer executive briefings", "Microsoft partner sessions", "field events"],
+  "vibe": "confident, modern, gradient-led, Microsoft brand-aligned"
+}

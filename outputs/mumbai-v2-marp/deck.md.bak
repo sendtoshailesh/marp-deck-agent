@@ -1,0 +1,854 @@
+---
+marp: true
+theme: executive-dark
+size: 16:9
+paginate: true
+---
+
+<!-- _class: lead -->
+
+GitHub  ·  GitHub Copilot  ·  Azure AI Foundry  ·  Azure DevOps
+MUMBAI AI DAY 2025
+Build AI‑Powered Apps Faster:
+Idea to Production with Agentic DevOps
+Shailesh Kumar Mishra
+Microsoft  ·  GitHub Technology Sales & Consulting  ·  AI Expert Consultant
+🤖
+11:25 – 12:05  ·  40 minutes incl. live demos
+github.com/Azure/git-ape
+
+<!--
+SPEAKER NOTES — Slide 1: Title
+
+Namaste everyone! Welcome to the session. Before I start, quick show of hands — how many of you have GitHub Copilot installed? Good. How many of you have used it in the last week? OK. How many of you have complained that your manager doesn't count "Copilot wrote it" as your productivity? That's the real problem we're solving today.
+
+My name is Shailesh. I work at the intersection of GitHub, Azure, and the question every CTO in this room is asking their team on Monday morning: "If AI is so powerful, why is the delivery still so slow?"
+
+In the next 40 minutes, I want to show you that the problem is not AI. The problem is that we are running a 2015 process with 2025 tools. That's like buying a Formula 1 engine and putting it in a Mumbai BEST bus. The engine is capable. The system around it... not so much.
+
+We'll do two live demos, and I want to leave you with two things you can actually do next week — not next quarter.
+
+Let's go.
+-->
+
+---
+
+AGENDA
+40 Minutes. 2 Demos. 1 Big Idea.
+🔥
+1
+The Burning Platform
+⚡
+2
+AI Solved Execution
+🧠
+3
+Agents + AIDLC
+🎬
+4
+DEMO ▶  Idea → Prototype
+🚀
+5
+git-ape → Production
+🎬
+6
+DEMO ▶  git-ape Live
+🤝
+7
+How We Help
+
+<!--
+SPEAKER NOTES — Slide 2: Agenda
+
+Seven acts, 40 minutes. Think of this like a Bollywood movie — we start with a crisis, there's a hero moment in the middle, and by the end you get a working solution you can take home.
+
+The two DEMO segments are not a recording. Not a screenshot. Not a "imagine if this worked" slide. It's live. If something breaks, that's part of the charm — because that's real engineering.
+
+The big idea I want you to walk away with: The bottleneck in your engineering org is no longer code. It's decision-making. And AIDLC is how you systematically move decisions from people to agents — without losing control.
+
+Let's start with the uncomfortable truth.
+-->
+
+---
+
+THE PROBLEM
+?
+What if your engineering culture
+was built for a world that no longer exists?
+Code is cheap now
+Execution is fast now
+Judgement is still slow
+→ So what changed?
+
+<!--
+SPEAKER NOTES — Slide 3: The Burning Platform
+
+Let me ask you a provocative question. If you look at how your engineering teams work today — the sprint ceremonies, the review gates, the approval chains — how much of that was designed *this year*? How much was designed five years ago?
+
+I've talked to teams at ICICI, Bajaj, HDFC. Smart teams. Great engineers. But they're running a process that was designed before GitHub Copilot existed. Before ChatGPT. Before AI agents could write and review code in seconds.
+
+Think about it this way. Writing code used to be expensive — it took days. Now it takes minutes. That's the "Code is cheap" shift.
+
+Running that code — spinning up infra, deploying, testing — was complex. Now agents do it continuously. "Execution is fast."
+
+But here's what didn't change: the meeting where eight people debate *which* feature to build next. The architect sign-off that takes three weeks. The compliance review that nobody knows who owns.
+
+Judgement is still slow. And now that AI has made everything else fast, the slowness of human decision-making is exposed like never before.
+
+The bottleneck didn't move downstream. It moved *upstream*.
+
+This is the burning platform. Not because AI is taking jobs — but because your *process* hasn't caught up with your *tools*.
+-->
+
+---
+
+THE SHIFT
+AI Solved Execution.
+Decisions are where the time goes.
+✅
+AI handles this
+Writing code
+Unit tests
+PR reviews
+Deployments
+Infra provisioning
+Documentation
+⏳
+Humans still decide
+Product direction
+Architecture choices
+Quality standards
+Compliance calls
+Team alignment
+"What good looks like"
+→
+AIDLC goal: systematically move the gold column into the green column.
+
+<!--
+SPEAKER NOTES — Slide 4: AI Solved Execution
+
+Here's the dirty secret that no one talks about in AI webinars.
+
+GitHub Copilot is writing code. Azure DevOps pipelines are running. Infrastructure is being provisioned in minutes. The green column? Mostly solved. Not perfectly — but well enough.
+
+The gold column is where your release train is stuck.
+
+I was talking to a senior architect at a large private bank here in Mumbai. His team had GitHub Copilot. Great. They were generating code 40% faster. But they still couldn't ship faster because... the architecture review board met once a month. Once. A month.
+
+You have a Ferrari engine and a traffic signal that only turns green on the 15th of every month. That's the real problem.
+
+The gold column is not going away. You still *need* human judgment on direction and quality. But right now, those decisions are happening in meetings, in emails, in Slack threads — they're undocumented, unrepeatable, and every new engineer has to figure them out again from scratch.
+
+AIDLC is about taking those decisions and encoding them. Write them down once, give them to an agent, and let the agent apply them at machine speed. The human becomes the validator, not the bottleneck.
+
+That's the shift.
+-->
+
+---
+
+AGENTIC AI
+Agents don't just execute — they reason.
+AI
+Agent
+💡
+Human
+Intent
+🧩
+Decompose
+& Plan
+⚙️
+Call Skills
+& Tools
+✅
+Validate
+& Return
+Intent → Spec
+Spec → Plan
+Plan → Action
+Action → Verify
+
+<!--
+SPEAKER NOTES — Slide 5: How Agents Work
+
+Let me explain how an AI agent actually works — because there's a lot of confusion between "AI autocomplete" and "AI agent."
+
+Copilot autocomplete is like a smart typist. You type, it suggests the next word. Helpful. Nice. But it's not an agent.
+
+An agent is different. You give it a goal — not a prompt — and it figures out how to get there.
+
+Example: You say "Build me a loan intake API for retail customers." An agent doesn't just start typing code. It first decomposes the problem: What are the requirements? What's the data model? What security constraints apply? Then it starts calling skills — it might call a tool to look up your org's approved tech stack, call another to generate a test plan, call a third to check naming conventions.
+
+The big shift is this: instead of a human doing all that decomposition manually in a planning session... the agent does it. The human writes the goal — the "intent" — and reviews the output.
+
+Now here's the beautiful part. In an AIDLC-mature organisation, all those rules the agent follows — the naming conventions, the security standards, the quality bar — they've been written down as specifications. Once.
+
+So every time a new feature is built, the agent applies the same institutional wisdom. Automatically. No tribal knowledge. No "ask Ramesh because he's been here 7 years."
+
+Ramesh, by the way, is now a Decision Encoder. More on that in a few slides.
+-->
+
+---
+
+AIDLC
+AIDLC: The Journey from Intent to Production
+💡
+1
+Requirements
+& Intent
+1
+→
+🏗
+2
+Design
+& Architecture
+2
+→
+⌨
+3
+Code
+& Review
+3
+→
+✅
+4
+Test
+& Validate
+4
+→
+🚀
+5
+Deploy
+& Operate
+5
+👤  Human sets:
+Intent · Quality bar · Architectural direction
+Compliance standards · Approval of outcomes
+📊 Maturity grows as decisions are encoded into specs
+🤖  Agent handles:
+Code · Tests · PRs · IaC · Security scans
+Deploy · Docs · Review · Rollback · Drift check
+⚡ Executes at machine speed, 24×7, no standup needed
+
+<!--
+SPEAKER NOTES — Slide 6: AIDLC Pipeline
+
+This is AIDLC — the AI-Driven Development Lifecycle.
+
+Five stages. Same as your current SDLC. Requirements, Design, Code, Test, Deploy. Nothing revolutionary about the stages themselves.
+
+What's revolutionary is *who does the work* at each stage.
+
+In a traditional SDLC, humans do the heavy lifting at every stage. An agent is maybe helping with autocomplete. In AIDLC, agents handle the execution at every stage — while humans set the direction.
+
+The bottom row is important. The human's job is to write down the intent and quality bar clearly enough that an agent can act on it. The agent's job is to execute that intent — reliably, consistently, at scale.
+
+Here's the maturity insight: in the beginning, humans are still doing most of the decision-making. They're just using agents as faster executors. That's Level 1.
+
+As you progress, you start encoding more decisions into the spec — "always use managed identity," "never expose port 22," "our microservices follow this naming pattern." The agent applies these rules automatically. Level 2.
+
+At Level 3, agents are orchestrating entire workflows. The human reviews outcomes, not steps.
+
+At Level 4 — the frontier — agents are even suggesting improvements to the process itself.
+
+Where is your org today? Most of the BFSI companies in India are at Level 1 and a half. Comfortable with the tools but not yet encoding the decisions. That's what we're helping you do.
+-->
+
+---
+
+MATURITY MODEL
+Where is your organisation today?
+L1
+🔧
+Assisted
+22%
+Copilot suggests · humans decide · ~20% faster
+L2
+⚡
+Augmented
+44%
+Agents do whole tasks · teams encode standards
+L3
+🤖
+Autonomous
+75%
+Agents orchestrate end-to-end · humans review outcomes
+L4
+🧬
+Self-Optimising
+97%
+Agents evolve the process itself
+The goal of AIDLC is to move you right →
+
+<!--
+SPEAKER NOTES — Slide 7: Maturity Model
+
+I want to be honest with you here. Most organisations in this room are at L1. Some are touching L2. Very few are at L3. And L4 is the research frontier.
+
+And that's completely fine. The point is not to jump from L1 to L4 tomorrow. The point is to know where you are, and take the next step.
+
+L1: You've enabled GitHub Copilot. Developers love it. They're writing code faster. You're measuring individual productivity. That's the starting point.
+
+L2: Your team has started writing Copilot custom instructions — "always follow our REST API standards," "use our approved libraries." You're encoding decisions. You've moved from individual productivity to team leverage.
+
+L3: Agents are doing whole workflows. A developer opens an issue, a Copilot agent generates a full PR with tests. The human reviews. If it's good, merge. This is where 4x velocity starts showing up in your DORA metrics.
+
+L4: This is where agents are looking at how the process is running and suggesting improvements. "Hey, your test coverage drops every Friday afternoon — want me to add a gate?" This is 2026 territory.
+
+Quick question for the room — how many of you have written any Copilot custom instructions for your team? 
+
+[Pause for hands]
+
+That's L2. You're already on the journey. What we're here to do is help you accelerate it.
+-->
+
+---
+
+THE SHIFT
+The sprint was a ceremony for slowing down.
+🐢  Traditional Agile
+⚡  Agentic DevOps
+2-week sprint planning
+Spec once, agents act continuously
+Dev → QA → Ops handoffs
+No handoffs — agents orchestrate
+Manual PR reviews
+Agent reviews at commit time
+Humans watch the pipeline
+Pipeline runs without a babysitter
+Standards in a wiki nobody reads
+Standards encoded in agent instructions
+Velocity = story points
+Velocity = business outcomes
+VS
+
+<!--
+SPEAKER NOTES — Slide 8: Agile vs Agentic
+
+I need to say something that might be slightly controversial in a room full of Certified Scrum Masters.
+
+The two-week sprint was a great innovation. In 2001. It was designed to shorten the feedback loop in a world where software took six months to ship. Sprint planning, daily standups, retrospectives — all ceremonies designed to make humans coordinate faster.
+
+But here's the thing: agents don't need a standup. They don't need a retrospective. They don't need two weeks to find out if the code works. They find out in 30 seconds when the test pipeline runs.
+
+I'm not saying agile is dead. I'm saying the *ceremonies* were compensating for the limitations of human coordination. As agents take over execution, those limitations change.
+
+The right side of this slide is what an AIDLC org looks like. You still have direction-setting. You still have planning. But it's specification-driven, not ceremony-driven. You write the spec once — "this feature should do X, follow Y standards, deploy to Z" — and agents execute it continuously until it's done.
+
+"Humans watch the pipeline" — I love this one. How many hours has your team spent this month watching a deployment pipeline waiting for it to go green? That time is gone. Agents watch pipelines. Humans set the policy for what happens when it goes red.
+
+This is not the future. Teams at Microsoft, GitHub, and our early customers are doing this *now*.
+-->
+
+---
+
+ROLES
+Your team didn't shrink. The roles transformed.
+🗺
+Product Manager
+↓
+Intent Architect
+⚙️
+Software Engineer
+↓
+Workflow Designer
+🛡
+Platform Engineer
+↓
+Guardrail Designer
+🔬
+QA Engineer
+↓
+Trust & Validation Lead
+📐
+Tech Lead
+↓
+Decision Encoder
+🧠
+Data Analyst
+↓
+Context Architect
+
+<!--
+SPEAKER NOTES — Slide 9: Role Evolution
+
+People always ask me: "Will AI take our developer jobs?"
+
+Short answer: No. Long answer: your job description is getting a rewrite.
+
+Let me tell you about the most valuable engineer at an AIDLC-mature organisation. It's not the person who writes the most code. It's the person who writes the best *specification* — the one that agents can follow reliably without asking for clarification every five minutes.
+
+Think about the Product Manager. Their job was to write PRDs — Product Requirements Documents. Now? Their job is to write agent-ready specifications. Not a 40-page Word document. A clear, structured description of what "done" looks like that an AI agent can actually act on. That's harder than it sounds. And it's more valuable than ever.
+
+The Platform Engineer used to build shared infrastructure. Now they build the guardrails — the Copilot instructions, the GitHub rulesets, the Azure Policy definitions. They're encoding the organisation's engineering culture into machine-readable form. This is incredibly high-leverage work.
+
+The Tech Lead used to make architectural decisions in meetings. Now they encode those decisions — once — as agent specifications. And every team benefits automatically.
+
+Ramesh from my earlier example? He's now a Decision Encoder. He's writing down 15 years of institutional knowledge in a form that agents can apply at scale. His knowledge finally has leverage. That's a promotion, not a demotion.
+
+The roles haven't disappeared. They've become more strategic.
+-->
+
+---
+
+▶  LIVE DEMO
+DEMO 1
+Idea  →  Prototype
+1
+State intent in plain English
+2
+Agent generates spec + user stories
+3
+Code + tests generated automatically
+4
+Human reviews reasoning, not code
+Stack: GitHub Copilot Workspace  ·  GitHub Copilot Agent  ·  Azure AI Foundry
+
+<!--
+SPEAKER NOTES — Slide 10: Demo 1 Setup
+
+Alright, this is where we switch from theory to show-and-tell.
+
+What you're about to see is a real, live demo. The use case: a loan application intake microservice — the kind of thing any BFSI team here might actually need to build.
+
+I'm going to start with nothing but a plain-English problem statement. No architecture diagram. No Jira ticket. No PRD.
+
+"Build a loan application intake microservice for retail banking customers. It should validate KYC documents, check CIBIL scores, and expose a REST API."
+
+That's the intent. Watch what happens next.
+
+[SWITCH TO LIVE DEMO — GitHub Copilot Workspace]
+
+Walk the audience through:
+1. Entering the intent prompt in Copilot Workspace
+2. Agent decomposing into requirements + user stories
+3. Agent generating code scaffold + unit tests
+4. Show the reasoning chain — "here's why I chose this architecture"
+5. Human review step — approve or redirect
+
+[Key point to make during demo]: Notice that I'm not reviewing every line of code. I'm reviewing the *reasoning*. Is the agent's understanding of the problem correct? Is the approach sensible? That's the human's job now.
+
+[After demo]: That took about 4 minutes. The equivalent planning and scaffolding process in a traditional sprint would have consumed most of a day. We'll talk about what that means for velocity shortly.
+-->
+
+---
+
+OPEN SOURCE
+git-ape: Prototype to Production. Safely.
+github.com/Azure/git-ape
+1
+📋
+Requirements
+Interview
+→
+2
+🔒
+Security +
+Cost Report
+→
+3
+✅
+Human
+Confirmation
+→
+4
+🚀
+Deploy +
+Validate
+Nothing deploys to Azure without your explicit confirmation  ·  Every run is auditable  ·  WAF-aligned by default
+
+<!--
+SPEAKER NOTES — Slide 11: git-ape
+
+OK so we now have a working prototype. That's great. But here's what happens in most organisations: the prototype lives in a developer's laptop for three months while security review, compliance review, and infra provisioning happen in parallel slow lanes.
+
+git-ape solves this. It's an open-source project on GitHub — azure/git-ape — that I and the team have built specifically for this problem.
+
+What does it do? It's a multi-agent platform engineering framework built on GitHub Copilot. You talk to it like you talk to a colleague: "@git-ape, deploy the loan intake microservice to Azure India South."
+
+And it does four things:
+
+One: It interviews you. Not a human interview — it asks the right questions about your requirements, your security constraints, your budget. 
+
+Two: Before touching anything, it generates a complete report. ARM template, architecture diagram, estimated monthly cost in rupees, security posture check. You see everything before anything happens.
+
+Three: It stops. And asks you to confirm. Nothing — absolutely nothing — goes to Azure without your explicit "yes." This is critical for regulated industries.
+
+Four: It deploys, and then validates. It checks that HTTPS is enforced, managed identity is configured, Application Insights is connected. And it logs everything — every deployment saved under .azure/deployments/ — which your auditors will love.
+
+And the security stack? Checkov runs on every IaC template. Microsoft Defender for DevOps is in the pipeline. Azure Policy acts as the final backstop. This is compliance by architecture, not compliance by audit.
+-->
+
+---
+
+SECURITY & COMPLIANCE
+Compliance is architecture, not an audit.
+Enforcement strength
+🏛
+Azure Policy
+⚙️
+GitHub Actions + Checkov
+🤖
+Copilot Agent Skills
+📝
+Repo Custom Instructions
+🧠
+Copilot Spaces (Context)
+↑  Enforced at deploy time        ↕  Enforced at build time        ↓  Enforced at intent time
+
+<!--
+SPEAKER NOTES — Slide 12: Guardrails
+
+This slide is specifically important for the BFSI folks in the room. Your regulators — RBI, SEBI — have very specific requirements. Data residency, encryption, access controls, audit trails. How do you make sure every deployment, from every team, meets those requirements?
+
+In a traditional org, you have a compliance checklist. An engineer fills it out. A compliance officer reviews it. If they missed something, you find out three weeks before go-live. Not great.
+
+In an AIDLC org with git-ape, compliance is embedded at five layers.
+
+Layer 5 — the bottom — is context. Copilot Spaces curate what the AI knows about your environment. Your approved architecture patterns, your security policies, your Azure region constraints. The agent starts from this knowledge.
+
+Layer 4 — Copilot custom instructions. In your repository, you write: "Always use managed identity. Never open SSH to 0.0.0.0/0. Tag all resources with cost-centre." These travel with the code. Version-controlled. Peer-reviewed. Updated in a PR.
+
+Layer 3 — Copilot agent skills. Reusable capabilities — check naming conventions, look up your CMDB, validate cost thresholds. Any agent can invoke these.
+
+Layer 2 — GitHub Actions. Every IaC template runs through Checkov. Microsoft Defender for DevOps checks for vulnerabilities. Non-compliant code is blocked before merge.
+
+Layer 1 — Azure Policy. The final backstop. Even if something slipped through, Azure Policy denies the deployment. Your security team sleeps well.
+
+Five layers. By the time a deployment reaches production, it has passed through five independent compliance checks. That's the architecture of trust.
+-->
+
+---
+
+▶  LIVE DEMO
+DEMO 2
+Prototype  →  Production
+1
+@git-ape deploy the loan microservice
+2
+ARM template + security report + cost estimate
+3
+GitHub Actions: Checkov + Defender scan runs
+4
+You confirm → OIDC deploy → post-deploy validation
+Stack: git-ape · GitHub Copilot · GitHub Actions · Azure Policy · Defender for DevOps
+
+<!--
+SPEAKER NOTES — Slide 13: Demo 2 Setup
+
+OK we have our prototype from Demo 1. Now watch it go to production.
+
+[SWITCH TO LIVE DEMO — VS Code + Copilot Chat + git-ape]
+
+I'm going to type: @git-ape deploy the loan intake microservice to Azure India South, production environment.
+
+Watch what happens:
+
+Step 1: git-ape asks me a few questions. Region — India South. Runtime — Python 3.11. Plan — I'll go with the WAF recommended SKU. Monitoring — Application Insights, yes.
+
+Step 2: It goes away and generates. Within 60 seconds you'll see an ARM template, an architecture diagram, a security report, and a cost estimate in rupees. We're looking at approximately ₹3,200 per month for this workload.
+
+[Walk through the security report] — Notice: HTTPS enforced, managed identity configured, no open ports, TLS 1.2 minimum. All the things your compliance team would check manually.
+
+Step 3: Before deploying, GitHub Actions runs. Checkov scans the ARM template. Defender for DevOps checks for vulnerabilities. If anything fails, the deployment stops here.
+
+Step 4: I confirm in the PR. One comment: "Approved." That triggers the OIDC-authenticated deployment. No passwords. No service principal credentials in environment variables.
+
+And post-deploy: git-ape validates. Endpoint reachable? Yes. HTTPS? Yes. App Insights? Connected. 
+
+[After demo]: From prototype to production, in minutes, with a full compliance paper trail. That run is now saved in .azure/deployments/ — your next audit is going to be surprisingly easy.
+-->
+
+---
+
+BFSI INDIA
+Why this matters for Indian BFSI.
+🏛
+RBI Digital
+Lending Guidelines
+🔐
+Security
+by Default
+📊
+Full Audit
+Traceability
+🌐
+India Region
+Data Residency
+⚡
+10× Feature
+Velocity
+👥
+Shadow AI
+Governance
+
+<!--
+SPEAKER NOTES — Slide 14: BFSI India Context
+
+Let me speak directly to the BFSI folks in this room — and I know there are quite a few, given the panel we have after lunch featuring ICICI, Bajaj, HDFC, Yes Bank, and Kotak.
+
+RBI Digital Lending Guidelines — these are not suggestions. They're mandatory. AIDLC helps you embed those requirements into agent specifications so every feature is compliant by construction, not by review.
+
+Security by Default — I mentioned the five compliance layers. In a regulated environment, you can't have security as an afterthought. git-ape builds it in from the first line of infrastructure code.
+
+Full Audit Traceability — regulators want to know: who approved this deployment? When? What security checks ran? With git-ape, every deployment generates a complete audit trail — intent, spec, security report, approval, deployment log. All version-controlled in GitHub.
+
+India Region Data Residency — Azure Policy can enforce that your data never leaves India. We configure this as a first-class constraint in git-ape.
+
+10× Feature Velocity — this is the competitive angle. Your competitors are also talking to GitHub and Azure. The banks that encode their engineering decisions into AIDLC first will outship the ones still doing manual PRDs and monthly architecture review boards.
+
+Shadow AI Governance — and here's the one that's keeping your CISOs up at night. 100% of engineering organisations have AI-generated code in their codebase. 81% have no visibility into how AI is being used. Copilot custom instructions and git-ape give you that visibility and control. This is governable AI, not shadow AI.
+-->
+
+---
+
+TECHNOLOGY STACK
+The full Microsoft stack behind AIDLC.
+INTENT
+💡
+Copilot Workspace
+🧠
+Azure AI Foundry
+📚
+Copilot Spaces
+EXECUTE
+⌨
+Copilot Coding Agent
+⚙️
+GitHub Actions
+🚀
+git-ape
+GOVERN
+🛡
+Defender for DevOps
+🏛
+Azure Policy
+🔐
+GitHub Advanced Security
+
+<!--
+SPEAKER NOTES — Slide 15: Microsoft Stack
+
+This is the full stack we're working with. Three layers.
+
+Intent layer: This is where human decisions get expressed. Copilot Workspace lets you describe a feature in plain English and watch it decompose into specs. Azure AI Foundry lets you connect multiple AI models and evaluate which one is best for a given task. Copilot Spaces lets you curate the context — what documentation, what patterns, what constraints — that agents work from.
+
+Execution layer: This is where the work happens. The Copilot Coding Agent runs autonomously — picks up issues, writes code, creates PRs. GitHub Actions provides the orchestration backbone. And git-ape is the deployment intelligence layer — it handles Azure deployments with all the security and compliance built in.
+
+Governance layer: This is what makes enterprise adoption safe. Defender for DevOps integrates security scanning directly into your GitHub pipelines. Azure Policy acts as the final enforcement layer on the cloud side. GitHub Advanced Security catches vulnerabilities, exposed secrets, and dependency risks in the code itself.
+
+Everything here is Microsoft and GitHub. If you're already paying for GitHub Enterprise or Microsoft 365 E5, much of this is already available to you. git-ape is open source — free to use, free to customise.
+
+The question is not whether you have the tools. The question is whether you have the specs.
+-->
+
+---
+
+MEASURING ROI
+What does success look like?
+3–5×
+Deployment Frequency
+DORA
+↓ 65%
+Lead Time for Changes
+DORA
+↓ 45%
+Change Failure Rate
+DORA
+↓ 50%
+MTTR
+DORA
+Hours,
+not Weeks
+Spec-to-Ship Cycle Time
+↑ High
+Developer Happiness Index
+
+<!--
+SPEAKER NOTES — Slide 16: ROI and DORA
+
+Let's talk numbers. Because in this room, you're all going to have to justify this investment to someone — a CFO, a board, a risk committee.
+
+DORA metrics are the industry standard for measuring software delivery performance. Google and DVSM have been running this research for years. AIDLC-mature organisations consistently hit elite DORA bands.
+
+Deployment Frequency: 3 to 5 times faster. That means features that used to ship monthly now ship weekly. Or features that shipped weekly now ship daily.
+
+Lead Time for Changes: down 65%. The time from "I have an idea" to "it's in production" — that gap shrinks dramatically when agents handle the execution steps.
+
+Change Failure Rate: down 45%. Because agents apply the same quality checks every time. No tired Friday afternoon deployments that break things. No "I forgot to update the config" rollbacks.
+
+MTTR — Mean Time to Restore: down 50%. Because with drift detection and automated rollback, you find out about problems faster and fix them faster.
+
+But I want to add two metrics that DORA doesn't capture.
+
+Spec-to-Ship Cycle Time: From the moment you have an approved specification to the moment it's running in production — that should be hours, not weeks. In an AIDLC org, it often is.
+
+Developer Happiness: This one's hard to quantify, but easy to see. When engineers stop spending their days writing boilerplate and watching pipelines... they start doing the creative, high-leverage work they actually wanted to do when they got into this field. Retention goes up. Innovation goes up.
+
+You can't manage what you don't measure. Start with deployment frequency and lead time. Those two alone will tell you whether your AIDLC investment is working.
+-->
+
+---
+
+HOW WE HELP
+Two engagements. Your real use case.
+ENGAGEMENT 1
+🛠
+AIDLC Workshop
+Idea → Working Prototype
+1–2 day hands-on workshop
+Your real BFSI use case
+AIDLC stage-by-stage
+GitHub Copilot + AI Foundry
+You own the prototype
+ENGAGEMENT 2
+🚀
+git-ape Production
+Prototype → Production
+git-ape in your GitHub org
+WAF standards enforced
+Org policies encoded
+Security gates built in
+Platform team owns it
+Talk to us after this session  ·  github.com/Azure/git-ape  ·  Both available as structured Microsoft / GitHub engagements
+
+<!--
+SPEAKER NOTES — Slide 17: How We Help
+
+So we've shown you the theory. We've shown you two live demos. Now let me tell you how we actually get you started.
+
+We offer two structured engagements.
+
+Engagement 1 is the AIDLC Workshop. One to two days. We come to you — your team, your office, your use case. Not a generic banking example. Not a loan intake demo we built for this session. Your actual problem.
+
+Maybe it's a customer onboarding flow that takes 3 days and should take 20 minutes. Maybe it's a fraud alert system that currently requires 5 engineers to babysit. Maybe it's a reporting pipeline that runs overnight and the team dreads Monday mornings.
+
+We pick that problem, we apply AIDLC stage by stage, and by the end of the workshop you have a working prototype that your team built, understands, and owns. Not a PowerPoint of what we *could* build.
+
+Engagement 2 is git-ape Production Readiness. We take what you built in Engagement 1 — or frankly, any prototype you already have — and we put the production machinery around it. git-ape in your GitHub org, your org standards encoded as instructions, your security policies as guardrails.
+
+The deliverable of Engagement 2 is not a deployment. It's a *capability*. Your platform team will know how to do this for the next feature, and the one after that.
+
+These are available as structured Microsoft and GitHub engagements. Come find me after the session. I have about 30 minutes before lunch and I don't plan to eat alone.
+-->
+
+---
+
+AIDLC WORKSHOP
+2 days. Real team. Real outcome.
+DAY 1  —  Discover & Build
+AM
+Use Case Selection
+Pick the highest-value pain point. Frame as AIDLC problem statement.
+AM
+Intent → Spec
+Translate business goal into agent-ready specification.
+PM
+Prototype Sprint
+Agents generate code + tests. Team reviews reasoning.
+PM
+AIDLC Stage Review
+Map human vs agent decisions. Identify what to encode next.
+DAY 2  —  Harden & Deploy
+AM
+git-ape Setup
+Install in your org. Configure Azure MCP + OIDC auth.
+AM
+Encode Org Standards
+Architecture standards → Copilot custom instructions.
+PM
+Deploy Prototype
+ARM template → security report → approval → Azure deploy.
+PM
+Guardrails & Handoff
+CI/CD armed. Drift detection live. Runbook delivered.
+✅  Working prototype  ·  git-ape in your org  ·  Org standards encoded  ·  Production CI/CD pipeline  ·  AIDLC maturity baseline
+
+<!--
+SPEAKER NOTES — Slide 18: Workshop Detail
+
+For those of you thinking "this sounds interesting but what does it actually look like in practice" — here's the agenda.
+
+Day 1 morning: We don't start with tools. We start with your problem. What is the one workflow in your engineering process that is causing the most pain? We map that to AIDLC. We write the intent. We write the spec. By lunchtime you have a clear target.
+
+Day 1 afternoon: We build. Using GitHub Copilot Workspace and Azure AI Foundry. Your engineers are at the keyboard. We're facilitating, not building for you. By end of day you have a working prototype.
+
+Day 2 morning: We set up git-ape in your GitHub organisation. We have a checklist for this — it takes about an hour. Then we do something more important: we sit down with your architects and your compliance team and we write down the rules. The naming conventions. The security requirements. The Azure region constraints. These go into Copilot custom instructions. This might be the most valuable hour of the two days — you're encoding institutional knowledge that currently lives in people's heads.
+
+Day 2 afternoon: We deploy. Live. Through git-ape. With all the security gates running. And by 5pm, your platform team has a runbook, a configured pipeline, and the confidence to do this for the next feature without us.
+
+That's what you take home.
+
+Five deliverables, written on the board at the end of Day 2. Not aspirational. Tangible.
+-->
+
+---
+
+TAKEAWAYS
+Remember these five things.
+1
+Execution is solved. Specification is your new competitive advantage.
+2
+AIDLC encodes human decisions into agent specs — stage by stage.
+3
+GitHub Copilot + AI Foundry: idea to prototype in minutes, not sprints.
+4
+git-ape: prototype to production with compliance built in.
+5
+Measure with DORA. What you don't measure, you can't mature.
+
+<!--
+SPEAKER NOTES — Slide 19: Takeaways
+
+We're almost out of time. Let me give you five things to take home.
+
+One: Execution is solved. Your developers are no longer the bottleneck. The bottleneck is decision-making — direction, standards, specs. If your engineering managers are still measured on how fast developers write code, change that metric now.
+
+Two: AIDLC is not a tool you buy. It's a methodology you adopt. Start small. Pick one stage. Write down one decision. Give it to an agent. Measure the result. Repeat.
+
+Three: The idea-to-prototype journey is already here. We showed it to you today. If your teams aren't using Copilot Workspace for feature development yet, that's two to three sprints of productivity you're leaving on the table every month.
+
+Four: git-ape closes the prototype-to-production gap. The security and compliance that used to take weeks of review cycles is now built into the deployment pipeline itself. And it's open source — github.com/Azure/git-ape. Clone it tonight.
+
+Five: If you're not measuring DORA metrics, you don't know if you're improving. Deployment frequency. Lead time. Change failure rate. MTTR. These four numbers will tell you everything about your engineering health. Start tracking them.
+
+[If time allows]: Any questions? I'll also be at the networking lunch — come find me if you want to talk about your specific use case. And come to Aman's hands-on lab at 2pm — he'll actually have you building this yourselves.
+
+Thank you very much! Dhanyavaad!
+-->
+
+---
+
+Encode. Execute. Evolve.
+The AIDLC Journey Starts with Your Next Feature.
+git-ape  →  github.com/Azure/git-ape
+Azure AI Foundry  →  ai.azure.com
+GitHub Copilot  →  github.com/features/copilot
+AIDLC Workflows  →  github.com/awslabs/aidlc-workflows
+Shailesh Kumar Mishra
+Microsoft  ·  GitHub  ·  linkedin.com/in/shailesh-mishra  ·  Medium: @geopoliticsdemon
+🙏
+Thank You
+Q & A
+Mumbai AI Day 2025  ·  11:25 – 12:05
+
+<!--
+SPEAKER NOTES — Slide 20: Closing
+
+Three links worth bookmarking right now on your phone:
+
+github.com/Azure/git-ape — clone this tonight. It's open source, it's free, and you can have it running in your VS Code in about 20 minutes.
+
+ai.azure.com — this is Azure AI Foundry. If you want to see what multi-model AI orchestration looks like, start here.
+
+And connect with me on LinkedIn — shailesh-mishra. I post regularly about AIDLC, GitHub Copilot, and agentic DevOps. And if you want to read some slightly unhinged geopolitics analysis at 2am, I'm also on Medium as @geopoliticsdemon. Different audience, same commitment to saying what I actually think.
+
+One final thought.
+
+India's software engineering talent is world-class. Our developers are among the best anywhere. The question is whether we're giving them a process that matches their capability.
+
+AIDLC is not about replacing Indian engineers. It's about giving the best engineering talent in the world tools and processes worthy of that talent.
+
+Thank you. Dhanyavaad. Jai Hind.
+
+[Take questions. If time is tight, offer to answer individually during lunch.]
+-->

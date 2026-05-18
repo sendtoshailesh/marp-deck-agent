@@ -1,0 +1,24 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '17px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    background: 'transparent'
+---
+flowchart LR
+  T["💬<br/><b>1. Talk</b><br/>Plain English<br/>intent"] --> G["📜<br/><b>2. Generate</b><br/>ARM · Security<br/>Cost estimate"]
+  G --> A["✋<br/><b>3. Approve</b><br/>You confirm<br/>explicitly"]
+  A --> D["🚀<br/><b>4. Deploy</b><br/>OIDC · Validate<br/>Audit log"]
+  classDef step1 fill:#0078D4,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  classDef step2 fill:#106EBE,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  classDef step3 fill:#5C2D91,stroke:#8661C5,stroke-width:2.5px,color:#FFFFFF
+  classDef step4 fill:#008272,stroke:#00BCF2,stroke-width:2px,color:#FFFFFF
+  class T step1
+  class G step2
+  class A step3
+  class D step4

@@ -1,0 +1,24 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '16px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    background: 'transparent'
+---
+flowchart LR
+  PM["👔<br/>Product Manager"] --> IA["🎯<br/><b>Intent Architect</b>"]
+  SE["⌨<br/>Software Engineer"] --> WD["🧩<br/><b>Workflow Designer</b>"]
+  PE["🛠<br/>Platform Engineer"] --> GD["🏗<br/><b>Guardrail Designer</b>"]
+  QA["🔍<br/>QA Engineer"] --> TV["🛡<br/><b>Trust & Validation</b>"]
+  TL["👨‍💼<br/>Tech Lead"] --> DE["🧠<br/><b>Decision Encoder</b>"]
+  DA["📊<br/>Data Analyst"] --> CA["🤝<br/><b>Context Architect</b>"]
+  classDef old fill:#605E5C,stroke:#8DA5C2,stroke-width:1.5px,color:#FFFFFF
+  classDef new fill:#0078D4,stroke:#50E6FF,stroke-width:2.5px,color:#FFFFFF
+  class PM,SE,PE,QA,TL,DA old
+  class IA,WD,GD,TV,DE,CA new
+  linkStyle default stroke:#50E6FF,stroke-width:2px

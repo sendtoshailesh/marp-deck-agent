@@ -1,0 +1,26 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '17px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    background: 'transparent'
+---
+flowchart LR
+  I["👤<br/><b>Human Intent</b><br/>Plain English"] --> D["🧠<br/><b>Decompose</b><br/>Plan + Steps"]
+  D --> T["🛠<br/><b>Call Tools</b><br/>Code · APIs · MCP"]
+  T --> V{"✅<br/><b>Validate</b><br/>Tests · Policy"}
+  V -- "Pass" --> O["🚀<br/><b>Deliver</b>"]
+  V -- "Fail · Re-plan" --> D
+  classDef human fill:#5C2D91,stroke:#8661C5,stroke-width:2px,color:#FFFFFF
+  classDef agent fill:#0078D4,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  classDef gate fill:#008272,stroke:#00BCF2,stroke-width:2px,color:#FFFFFF
+  classDef done fill:#106EBE,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  class I human
+  class D,T agent
+  class V gate
+  class O done

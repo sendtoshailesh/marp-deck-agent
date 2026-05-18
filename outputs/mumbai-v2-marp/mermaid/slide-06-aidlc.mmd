@@ -1,0 +1,25 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '16px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    background: 'transparent'
+---
+flowchart LR
+  S1["💡<br/><b>01</b><br/>Requirements<br/>& Intent"] --> S2["🏗<br/><b>02</b><br/>Design<br/>& Architecture"]
+  S2 --> S3["⌨<br/><b>03</b><br/>Code<br/>& Review"]
+  S3 --> S4["✅<br/><b>04</b><br/>Test<br/>& Validate"]
+  S4 --> S5["🚀<br/><b>05</b><br/>Deploy<br/>& Operate"]
+  H["👤 <b>Human sets</b><br/>Intent · Quality bar<br/>Architecture · Compliance"] -.- S1
+  A["🤖 <b>Agent handles</b><br/>Code · Tests · PRs · IaC<br/>Deploy · Docs · Drift"] -.- S5
+  classDef stage fill:#0078D4,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  classDef human fill:#5C2D91,stroke:#8661C5,stroke-width:1.5px,color:#FFFFFF
+  classDef agent fill:#008272,stroke:#00BCF2,stroke-width:1.5px,color:#FFFFFF
+  class S1,S2,S3,S4,S5 stage
+  class H human
+  class A agent

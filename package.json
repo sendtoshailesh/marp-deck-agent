@@ -12,11 +12,18 @@
     "extract-theme": "node scripts/extract-pptx-theme.js",
     "convert-pptx": "node scripts/convert-pptx-slides.js",
     "extract-url": "node scripts/extract-url-tokens.js",
+    "ingest-context": "node scripts/ingest-context.js",
+    "extract-template": "python3 scripts/extract-pptx-template.py",
+    "build-pptx": "python3 scripts/build-pptx-from-template.py",
+    "pptx-to-pdf": "bash scripts/pptx-to-pdf.sh",
+    "py-deps": "pip install -r scripts/requirements.txt",
     "preview-templates": "npx -y @marp-team/marp-cli --theme-set ./templates/ templates/*/preview.md --output ./build/"
   },
   "dependencies": {
     "adm-zip": "^0.5.16",
     "fast-xml-parser": "^5.2.0",
+    "mammoth": "^1.8.0",
+    "pdf-parse": "^1.1.1",
     "playwright": "^1.52.0"
   },
   "devDependencies": {

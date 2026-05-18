@@ -1,0 +1,41 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: 'Segoe UI, Inter, Calibri, sans-serif'
+    fontSize: '15px'
+    primaryColor: '#0078D4'
+    primaryTextColor: '#FFFFFF'
+    primaryBorderColor: '#50E6FF'
+    lineColor: '#50E6FF'
+    clusterBkg: 'transparent'
+    clusterBorder: '#50E6FF'
+    background: 'transparent'
+---
+flowchart TB
+  subgraph INTENT["🎯 INTENT — Express what to build"]
+    direction LR
+    CW["Copilot Workspace<br/><i>Specs & plans</i>"]
+    AF["Azure AI Foundry<br/><i>Models · RAG · Tools</i>"]
+    CS["Copilot Spaces<br/><i>Domain context</i>"]
+  end
+  subgraph EXECUTE["⚡ EXECUTE — Agents do work"]
+    direction LR
+    CC["Copilot Coding Agent<br/><i>Code · PRs · Tests</i>"]
+    GA["GitHub Actions<br/><i>CI/CD orchestration</i>"]
+    GP["git-ape<br/><i>Deploy to Azure</i>"]
+  end
+  subgraph GOVERN["🛡 GOVERN — Compliance & security"]
+    direction LR
+    DD["Defender for DevOps<br/><i>Security scanning</i>"]
+    AP["Azure Policy<br/><i>Deploy guardrails</i>"]
+    GS["GitHub Advanced Security<br/><i>Secrets · Scanning · Deps</i>"]
+  end
+  INTENT --> EXECUTE
+  EXECUTE --> GOVERN
+  classDef intent fill:#5C2D91,stroke:#8661C5,stroke-width:2px,color:#FFFFFF
+  classDef exec fill:#0078D4,stroke:#50E6FF,stroke-width:2px,color:#FFFFFF
+  classDef gov fill:#008272,stroke:#00BCF2,stroke-width:2px,color:#FFFFFF
+  class CW,AF,CS intent
+  class CC,GA,GP exec
+  class DD,AP,GS gov
